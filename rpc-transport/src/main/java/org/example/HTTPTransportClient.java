@@ -6,6 +6,9 @@ import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
+/**
+ * @author Sizhe
+ */
 public class HTTPTransportClient implements TransportClient{
     private String url;
     @Override
@@ -29,13 +32,12 @@ public class HTTPTransportClient implements TransportClient{
             if(resultCode == HttpURLConnection.HTTP_OK){
                 return httpConn.getInputStream();
             }else {
-                httpConn.getErrorStream();
+                return httpConn.getErrorStream();
             }
 
         } catch (IOException e){
             throw new IllegalStateException(e);
         }
-        return null;
     }
 
     @Override
