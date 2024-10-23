@@ -53,7 +53,7 @@ public class HTTPTransportServer implements TransportServer{
         @Override
         protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
             log.info("client connect");
-            
+
             ServletInputStream in = req.getInputStream();
             ServletOutputStream out = resp.getOutputStream();
 
